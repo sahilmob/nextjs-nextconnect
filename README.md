@@ -1,6 +1,7 @@
-## Getting Started
+A Social media app created using NextJs, MongoDB and NodeJs server
 
-1. Clone this repo with `git clone git@github.com:reedbarger/next-connect.git`
+## Getting Started
+1. Clone this repo with `git clone git@github.com:sahilmob/nextjs-nextconnect.git`
 2. Install dependencies (`npm install` or `yarn install`)
 3. Go to [MLab](mlab.com) and create a new (free) database
 4. Copy the Database URI to connect using the Mongo Driver
