@@ -5,6 +5,8 @@ import Button from "@material-ui/core/Button";
 import ShareOutlined from "@material-ui/icons/ShareOutlined";
 import withStyles from "@material-ui/core/styles/withStyles";
 
+import ActiveLink from "./ActiveLink";
+
 const Navbar = ({ classes, router, pageProps: { auth } }) => {
 	const { user = {} } = auth || {};
 	return (
@@ -14,23 +16,31 @@ const Navbar = ({ classes, router, pageProps: { auth } }) => {
 		>
 			<Toolbar>
 				{/* Main Title / Home Button */}
-				<ShareOutlined className={classes.icon} />
+				<ActiveLink href="/">
+					<ShareOutlined className={classes.icon} />
+				</ActiveLink>
 				<Typography
 					variant="h5"
 					component="h1"
 					className={classes.toolbarTitle}
 				>
-					NextConnect
+					<ActiveLink href="/">NextConnect</ActiveLink>
 				</Typography>
 				{user._id ? (
 					<div>
-						<Button>Profile</Button>
+						<Button>
+							<ActiveLink href="/profile">Profile</ActiveLink>
+						</Button>
 						<Button variant="outlined">Sign out</Button>
 					</div>
 				) : (
 					<div>
-						<Button>Sign in</Button>
-						<Button>Sign up</Button>
+						<Button>
+							<ActiveLink href="/signin">Sign in</ActiveLink>
+						</Button>
+						<Button>
+							<ActiveLink href="/signup">Sign up</ActiveLink>
+						</Button>
 					</div>
 				)}
 			</Toolbar>
